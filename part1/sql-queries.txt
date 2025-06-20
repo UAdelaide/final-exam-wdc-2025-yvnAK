@@ -13,4 +13,5 @@ insert into Dogs (owner_id, name, size) values
 ((select user_id from Users where username ='jaechong345'), 'Barker', 'large'),
 ((select user_id from Users where username ='jaechong345'), 'Destroyer', 'small');
 
-insert into WalkRequests (dog_id, requested_time, duration_minutes, location, status)
+insert into WalkRequests (dog_id, requested_time, duration_minutes, location, status) values
+((select dog_id from Users where username ='alice123'), 'Max', 'medium'),
