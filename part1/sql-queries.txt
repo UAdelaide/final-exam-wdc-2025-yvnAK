@@ -7,7 +7,7 @@ values
 ('kellsk295', 'klsk@example.com', 'hashbr1wn', 'walker');
 
 insert into Dogs (owner_id, name, size) values
-('alice123'),
+(select owner_id 'alice123'),
 ('bobwalker'),
 ('carol123'),
 ('jaechong345'),
