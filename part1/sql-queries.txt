@@ -7,8 +7,7 @@ values
 ('kellsk295', 'klsk@example.com', 'hashbr1wn', 'walker');
 
 insert into Dogs (owner_id, name, size) values
-((select owner_id from Users where username ='alice123'), ),
-('bobwalker'),
+((select owner_id from Users where username ='alice123'), '', ''),
 ('carol123'),
 ('jaechong345'),
 ('kellsk295');
