@@ -6,3 +6,4 @@ values
 (jaechong345, jchn@example.com, hashbr0wn, owner),
 (kellsk295, klsk@example.com, hashbr1wn, walker);
 
+insert into Dogs (owner_id, name, size)
