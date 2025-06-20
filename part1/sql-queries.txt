@@ -5,4 +5,9 @@ insert into Users (username, email, password_hash, role) values
 ('jaechong345', 'jchn@example.com', 'hashbr0wn', 'owner'),
 ('kellsk295', 'klsk@example.com', 'hashbr1wn', 'walker');
 
-insert into Dogs (owner_id, name, size)
+insert into Dogs (owner_id, name, size) values
+('alice123'),
+('bobwalker'),
+('carol123', 'carol@example.com', 'hashed789', 'owner'),
+('jaechong345', 'jchn@example.com', 'hashbr0wn', 'owner'),
+('kellsk295', 'klsk@example.com', 'hashbr1wn', 'walker');
