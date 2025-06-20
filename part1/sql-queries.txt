@@ -8,7 +8,9 @@ values
 
 insert into Dogs (owner_id, name, size) values
 ((select owner_id from Users where username ='alice123'), '', ''),
+((select owner_id from Users where username ='carol123'), '', ''),
 ((select owner_id from Users where username ='alice123'), '', ''),
 ((select owner_id from Users where username ='alice123'), '', ''),
-('carol123'),
+((select owner_id from Users where username ='alice123'), '', ''),
+(''),
 ('jaechong345'),
