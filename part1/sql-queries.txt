@@ -18,4 +18,4 @@ insert into WalkRequests (dog_id, requested_time, duration_minutes, location, st
 ((select dog_id from Dogs where name ='Bella'), 2025-06-10 09:30:00, 45, 'Beachside Ave', 'accepted'),
 ((select dog_id from Dogs where name =''Revenge), 2025-06-10 00:00:00, , '', ''),
 ((select dog_id from Dogs where name ='Max'), 2025-12-26 20:20:50, , '', ''),
-((select dog_id from Dogs where name ='Destroyer'), 2025-08-30 :30:00, , '', ''),
+((select dog_id from Dogs where name ='Destroyer'), 2025-08-30 13:43:03, , '', ''),
