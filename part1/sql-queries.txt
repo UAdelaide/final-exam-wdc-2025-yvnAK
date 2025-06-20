@@ -14,4 +14,5 @@ insert into Dogs (owner_id, name, size) values
 ((select user_id from Users where username ='jaechong345'), 'Destroyer', 'small');
 
 insert into WalkRequests (dog_id, requested_time, duration_minutes, location, status) values
-((select dog_id from Dogs where name ='Max'), 2025-06-10 08:00:00, 30, ''),
+((select dog_id from Dogs where name ='Max'), 2025-06-10 08:00:00, 30, 'Parklands', 'open'),
+((select dog_id from Dogs where name ='Max'), 2025-06-10 08:00:00, 30, 'Parklands', 'open'),
