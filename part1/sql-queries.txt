@@ -10,5 +10,5 @@ insert into Dogs (owner_id, name, size) values
 ((select owner_id from Users where username ='alice123'), 'Max', 'medium'),
 ((select owner_id from Users where username ='carol123'), 'Bella', 'small'),
 ((select owner_id from Users where username ='jaechong345'), 'Revenge', 'small'),
-((select owner_id from Users where username ='jaechong345'), 'Barker', 'medium'),
+((select owner_id from Users where username ='jaechong345'), 'Barker', 'large'),
 ((select owner_id from Users where username ='jaechong345'), 'Destroyer', 'small');
