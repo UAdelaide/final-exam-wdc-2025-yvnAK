@@ -36,10 +36,7 @@ let db;
 
     // Create a table if it doesn't exist
     await db.execute(`
-      CREATE TABLE IF NOT EXISTS books (
-        id INT AUTO_INCREMENT PRIMARY KEY,
-        title VARCHAR(255),
-        author VARCHAR(255)
+
       )
     `);
   } catch (err) {
@@ -47,11 +44,10 @@ let db;
   }
 })();
 
-// Route to return books as JSON
 app.get('/', async (req, res) => {
   try {
-    const [books] = await db.execute('SELECT * FROM books');
-    res.json(books);
+    const [] = await db.execute('SELECT * FROM ');
+    res.json();
   } catch (err) {
     res.status(500).json({ error: 'Failed to fetch books' });
   }
