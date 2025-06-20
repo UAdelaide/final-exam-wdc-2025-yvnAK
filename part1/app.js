@@ -44,14 +44,14 @@ let db;
   }
 })();
 
-app.get('/', async (req, res) => {
-  try {
-    const [] = await db.execute('SELECT * FROM ');
-    res.json();
-  } catch (err) {
-    res.status(500).json({ error: 'Failed to fetch books' });
-  }
-});
+// app.get('/', async (req, res) => {
+//   try {
+//     const [] = await db.execute('SELECT * FROM ');
+//     res.json();
+//   } catch (err) {
+//     res.status(500).json({ error: 'Failed to fetch ' });
+//   }
+// });
 
 app.use(express.static(path.join(__dirname, 'public')));
 
