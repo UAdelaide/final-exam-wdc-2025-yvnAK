@@ -7,8 +7,8 @@ values
 ('kellsk295', 'klsk@example.com', 'hashbr1wn', 'walker');
 
 insert into Dogs (owner_id, name, size) values
-((select owner_id from Users where username ='alice123'), 'Max', 'medium'),
-((select owner_id from Users where username ='carol123'), 'Bella', 'small'),
-((select owner_id from Users where username ='jaechong345'), 'Revenge', 'small'),
-((select owner_id from Users where username ='jaechong345'), 'Barker', 'large'),
-((select owner_id from Users where username ='jaechong345'), 'Destroyer', 'small');
+((select user_id from Users where username ='alice123'), 'Max', 'medium'),
+((select user_id from Users where username ='carol123'), 'Bella', 'small'),
+((select user_id from Users where username ='jaechong345'), 'Revenge', 'small'),
+((select user_id from Users where username ='jaechong345'), 'Barker', 'large'),
+((select user_id from Users where username ='jaechong345'), 'Destroyer', 'small');
