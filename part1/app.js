@@ -169,7 +169,7 @@ app.get('/api/walkrequests/open', async (req, res) => {
             select
                 wr.request_id
                 d.name as dogName
-                
+                wr.
         `;
         const [reqRows] = await db.execute(query);
         res.json(reqRows);
