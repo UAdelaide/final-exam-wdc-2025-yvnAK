@@ -140,7 +140,7 @@ let db;
 app.get('/', async (req, res) => {
     try {
         // get all dog names + sizes and their owner username
-        // owner username is from the Users table
+        // owner username is from the Users table from the row which matches the owner id
         const [dogRows] = await db.execute();
         res.json(dogRows);
     } catch (err) {
