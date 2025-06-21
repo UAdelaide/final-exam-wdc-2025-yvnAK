@@ -151,7 +151,8 @@
                 const response = await fetch(url);
             }
             if (!response.ok) {
-
+                throw console.error();
+                
             }
             catch {
 
