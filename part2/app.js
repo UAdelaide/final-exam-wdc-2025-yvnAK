@@ -5,6 +5,9 @@ require('dotenv').config();
 
 const app = express();
 
+// DB
+const db = mysql.create
+
 // Sessions
 app.use(session({
     secret: process.env.SESSION_SECRET,
