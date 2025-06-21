@@ -33,6 +33,8 @@ let db;
             password: '',
             database: 'DogWalkService'
         });
+
+        // 
         await db.execute(`
             create table if not exists Dogs (
                 dog_id INT AUTO_INCREMENT PRIMARY KEY,
