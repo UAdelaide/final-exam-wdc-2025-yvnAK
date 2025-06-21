@@ -33,11 +33,10 @@ let db;
             password: '',
             database: 'DogWalkService'
         });
-        // =================================================
 
         // ==================Create Tables==================
         await db.execute(`
-            create table if not exists Dogs (
+            create table if not exists Users (
                 dog_id INT AUTO_INCREMENT PRIMARY KEY,
                 owner_id INT NOT NULL,
                 name VARCHAR(50) NOT NULL,
