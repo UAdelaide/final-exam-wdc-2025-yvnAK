@@ -146,7 +146,7 @@ app.get('/', async (req, res) => {
     }
 });
 // --------------------------------------------
-// ------------------api dogs------------------
+// ------------------api walkrequests open------------------
 app.get('/', async (req, res) => {
     try {
         const [] = await db.execute('SELECT * FROM ');
