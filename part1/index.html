@@ -156,7 +156,8 @@
                 const data = await response.json();
                 dog.src = data.message();
             }
-            catch {
+            catch (error) {
+                console.error('Image couldn't be loaded')
             }
         }
     </script>
