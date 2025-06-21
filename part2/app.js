@@ -5,7 +5,7 @@ require('dotenv').config();
 
 const app = express();
 
-// DB setup, 
+// DB setup, basically taken from the last task
 let db;
 
 (async () => {
