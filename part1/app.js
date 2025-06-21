@@ -97,7 +97,7 @@ let db;
 
         // ==================Insert Data==================
         const [userRows] = await db.execute('SELECT COUNT(*) AS count FROM Users');
-        if (rows[0].count === 0) {
+        if (userRows[0].count === 0) {
             await db.execute(`
                 insert into Users (username, email, password_hash, role) values
                 ('alice123', 'alice@example.com', 'hashed123', 'owner'),
@@ -107,8 +107,8 @@ let db;
                 ('kellsk295', 'klsk@example.com', 'hashbr1wn', 'walker')
             `);
         }
-        const [rows] = await db.execute('SELECT COUNT(*) AS count FROM Dogs');
-        if (rows[0].count === 0) {
+        const [dogRows] = await db.execute('SELECT COUNT(*) AS count FROM Dogs');
+        if (dogRows[0].count === 0) {
             await db.execute(`
                 insert into Dogs (owner_id, name, size) values
                 ((select user_id from Users where username ='alice123'), 'Max', 'medium'),
@@ -118,7 +118,7 @@ let db;
                 ((select user_id from Users where username ='jaechong345'), 'Destroyer', 'small')
             `);
         }
-        const [rows] = await db.execute('SELECT COUNT(*) AS count FROM WalkRequests');
+        const [reqRows] = await db.execute('SELECT COUNT(*) AS count FROM WalkRequests');
         if (rows[0].count === 0) {
             await db.execute(`
                 insert into WalkRequests (dog_id, requested_time, duration_minutes, location, status) values
