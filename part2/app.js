@@ -24,7 +24,7 @@ app.get('/', redirectIfAuth, (req, res) => {
 });
 
 // POST
-app.post('login', async (req, res) => {
+app.post('/login', async (req, res) => {
     const { username, password } = req.body;
 
     req.session.user = { id: user.user_id, username: user.username, role: user.role };
@@ -43,7 +43,7 @@ function redirectIfAuth(req, res, next) {
         }
     }
     // otherwise keep going into the login page
-    
+    next();
 }
 
 // Routes
