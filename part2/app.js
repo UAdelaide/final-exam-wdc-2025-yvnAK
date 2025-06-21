@@ -34,9 +34,12 @@ app.post('login', async (req, res) => {
 });
 
 function redirectIfAuth(req, res, next) {
-    if(req.session.user) {
-        if(req.session.user.role === 'owner'){
-            return res.redirect('/owner')
+    if (req.session.user) {
+        if (req.session.user.role === 'owner') {
+            return res.redirect('/owner-dashboard');
+        }
+        if (req.session.user.role === 'walker') {
+            return res.redirect('/walker-dashboard');
         }
     }
 }
