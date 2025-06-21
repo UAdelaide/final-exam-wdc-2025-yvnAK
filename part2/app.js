@@ -29,7 +29,7 @@ app.post('login', async (req, res) => {
 
     req.session.user = { id: user.user_id, username: user.username, role: user.role };
 
-    if (user.role === 'owner') return res.redirect
+    if (user.role === 'owner') return res.redirect('/owner-dashboard')
 });
 
 // Routes
