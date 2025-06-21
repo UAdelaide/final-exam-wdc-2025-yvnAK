@@ -18,7 +18,7 @@ app.use(express.json());
 app.use(express.static(path.join(__dirname, '/public')));
 
 // GET login
-app.get('/', )
+app.get('/', (req, res) => {res.render('login', )})
 
 // Routes
 const walkRoutes = require('./routes/walkRoutes');
