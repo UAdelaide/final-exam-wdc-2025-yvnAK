@@ -210,9 +210,6 @@ app.get('/api/walkers/summary', async (req, res) => {
                 wr.request_id
             from Users u
             where u.role = 'walker'
-            inner join WalkRatings wra on wra.walker_id = u.user_id
-
-            inner join WalkRequests wr on
         `;
         const [userRows] = await db.execute(query);
         res.json(userRows);
