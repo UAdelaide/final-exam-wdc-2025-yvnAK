@@ -42,6 +42,8 @@ function redirectIfAuth(req, res, next) {
             return res.redirect('/walker-dashboard');
         }
     }
+    // otherwise keep going into the login page
+    
 }
 
 // Routes
