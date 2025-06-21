@@ -163,7 +163,7 @@ app.get('/', async (req, res) => {
 app.get('/', async (req, res) => {
     try {
         // get users where role = 'walker'
-        // list username, number of ratings, rating, 
+        // list username, number of ratings, rating, completed walks
         const [userRows] = await db.execute();
         res.json(userRows);
     } catch (err) {
