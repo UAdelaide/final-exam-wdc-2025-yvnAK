@@ -156,7 +156,7 @@ app.get('/', async (req, res) => {
     }
 });
 // --------------------------------------------
-// ------------------api dogs------------------
+// ------------------api walkers summary------------------
 app.get('/', async (req, res) => {
     try {
         const [] = await db.execute('SELECT * FROM ');
@@ -165,7 +165,7 @@ app.get('/', async (req, res) => {
         res.status(500).json({ error: 'Failed to fetch ' });
     }
 });
-// --------------------------------------------
+// -------------------------------------------------------
 // ==============================================
 app.use(express.static(path.join(__dirname, 'public')));
 
