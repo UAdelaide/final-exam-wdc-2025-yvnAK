@@ -141,9 +141,10 @@ app.get('/api/dogs', async (req, res) => {
     try {
         // get all dog names + sizes and their owner username
         // owner username is from the Users table from the row which matches the owner id
-        const queryDogs = `
-            `;
-        const [dogRows] = await db.execute();
+        const query = `
+
+        `;
+        const [dogRows] = await db.execute(query);
         res.json(dogRows);
     } catch (err) {
         res.status(500).json({ error: 'Failed to fetch ' });
@@ -158,6 +159,9 @@ app.get('/api/walkrequests/open', async (req, res) => {
         // ....request id, time, duration, and location are local
         // ....dog name is from Dogs where the id matches
         // ....username is from where owner id is matches
+        const query = `
+
+        `;
         const [reqRows] = await db.execute();
         res.json(reqRows);
     } catch (err) {
