@@ -147,9 +147,11 @@ function redirectIfAuth(req, res, next) {
     if (req.session.user) { // ifuser is alerady authenticated
         if (req.session.user.role === 'owner') {
             return res.redirect('/owner-dashboard');
+            // if the user is already logged in as an owner, they'll get sent to the owner dashboard
         }
         if (req.session.user.role === 'walker') {
             return res.redirect('/walker-dashboard');
+            // and likewise for the walker
         }
     }
     // otherwise keep going into the login page
