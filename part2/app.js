@@ -6,7 +6,9 @@ require('dotenv').config();
 const app = express();
 
 // DB
-const db = mysql.create
+const db = mysql.createPool({
+    host: process.env.DB_HOst
+})
 
 // Sessions
 app.use(session({
