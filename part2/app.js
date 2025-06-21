@@ -40,9 +40,12 @@ app.post('/login', async (req, res) => {
             [username]
         );
 
+        // if the user doesnt exist
         if (users.length === 0) {
-            return res.render('login', {error: 'Invalid username or password'})
+            return res.render('login', { error: 'Invalid username or password' });
         }
+
+        
     }
 
     req.session.user = { id: user.user_id, username: user.username, role: user.role };
