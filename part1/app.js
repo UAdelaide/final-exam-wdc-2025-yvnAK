@@ -196,7 +196,8 @@ app.get('/api/walkers/summary', async (req, res) => {
         // ........and status = 'completed'
         const query = `
             select
-                
+                u.username
+                u.rating
             where u.role = 'walker'
         `;
         const [userRows] = await db.execute(query);
