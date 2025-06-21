@@ -183,7 +183,7 @@ app.post('/login', async (req, res) => {
 
         const user = users[0];
 
-        //checking password
+        // checking password
         const passwordVeri = await bcrypt.compare(password, user.password_hash);
 
         if (!passwordVeri) {
