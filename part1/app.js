@@ -167,11 +167,11 @@ app.get('/api/walkrequests/open', async (req, res) => {
         // ....username is from where owner id is matches
         const query = `
             select
-                wr.request_id
-                d.name as dogName
-                wr.requested_time
-                wr.duration_minutes
-                wr.location
+                wr.request_id,
+                d.name as dogName,
+                wr.requested_time,
+                wr.duration_minutes,
+                wr.location,
                 u.username as owName
             from WalkRequests wr
         `;
