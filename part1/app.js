@@ -214,7 +214,8 @@ app.get('/api/walkers/summary', async (req, res) => {
             select request_id
             from WalkApplications wa
             left join WalkRatings wr
-            on
+            on wa.request_id = wr.request_id
+            where 
         `;
         const [userRows] = await db.execute(query);
         res.json(userRows);
