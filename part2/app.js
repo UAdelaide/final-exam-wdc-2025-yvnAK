@@ -27,7 +27,7 @@ app.get('/', redirectIfAuth, (req, res) => {
 app.post('login', async (req, res) => {
     const { username, password } = req.body;
 
-    
+    req.session.user = {id: user.user_id, username: user.username, role: user.role}
 });
 
 // Routes
