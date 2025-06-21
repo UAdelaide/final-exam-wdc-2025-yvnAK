@@ -148,7 +148,7 @@ app.get('/api/dogs', async (req, res) => {
                 d.size,
                 u.username as owName
             from Dogs d
-            inner join Users u on d.owner_id 
+            inner join Users u on d.owner_id = u.user_id
         `;
         const [dogRows] = await db.execute(query);
         res.json(dogRows);
