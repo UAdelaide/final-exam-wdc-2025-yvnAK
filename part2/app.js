@@ -29,7 +29,8 @@ app.post('/login', async (req, res) => {
 
     try{
         const[users] = await db.execute(
-            ''
+            'select
+            user_id, username, password_hash, role'
         )
     }
 
