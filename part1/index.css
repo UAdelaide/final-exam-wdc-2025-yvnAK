@@ -18,7 +18,7 @@ footer {}
 /* ID */
 
 #wrapper {
-    padding: 0, 25%, 0, 25%;
+    padding: 0, 250px, 0, 250px;
     display: flex;
     flex-direction: column;
 }
