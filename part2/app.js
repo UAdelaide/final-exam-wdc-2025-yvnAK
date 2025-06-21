@@ -34,8 +34,9 @@ app.post('/login', async (req, res) => {
                 username,
                 password_hash,
                 role
-                
-        `)
+            from Users
+            where username = ?
+        )
     }
 
     req.session.user = { id: user.user_id, username: user.username, role: user.role };
