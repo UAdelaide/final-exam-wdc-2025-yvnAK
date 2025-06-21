@@ -36,7 +36,9 @@ let db;
 
         // Create a table if it doesn't exist
         await db.execute(`
-            create table if not exists
+            create table if not exists Dogs (
+
+            )
       )
     `);
     } catch (err) {
