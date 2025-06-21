@@ -212,7 +212,8 @@ app.get('/api/walkers/summary', async (req, res) => {
             from Users u
             where u.role = 'walker'
             select request_id
-            from 
+            from WalkApplications wa
+            left join 
         `;
         const [userRows] = await db.execute(query);
         res.json(userRows);
