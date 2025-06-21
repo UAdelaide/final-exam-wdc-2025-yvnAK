@@ -166,7 +166,8 @@ app.get('/api/walkrequests/open', async (req, res) => {
         // ....dog name is from Dogs where the id matches
         // ....username is from where owner id is matches
         const query = `
-
+            select
+                w.
         `;
         const [reqRows] = await db.execute(query);
         res.json(reqRows);
