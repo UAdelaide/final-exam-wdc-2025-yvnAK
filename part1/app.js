@@ -35,6 +35,7 @@ let db;
         });
 
         // ==================Create Tables==================
+        // ==================Create Tables==================
         await db.execute(`
             create table if not exists Dogs (
                 dog_id INT AUTO_INCREMENT PRIMARY KEY,
@@ -71,6 +72,7 @@ let db;
                 FOREIGN KEY (owner_id) REFERENCES Users(user_id)
             )
         `);
+        //
     } catch (err) {
         console.error('Error setting up database. Ensure Mysql is running: service mysql start', err);
     }
