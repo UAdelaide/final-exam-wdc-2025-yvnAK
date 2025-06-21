@@ -38,7 +38,10 @@ app.post('/login', async (req, res) => {
             where username = ?`,
             [username]
         );
-        
+
+        if (users.length === 0) {
+            return res.render('login')
+        }
     }
 
     req.session.user = { id: user.user_id, username: user.username, role: user.role };
