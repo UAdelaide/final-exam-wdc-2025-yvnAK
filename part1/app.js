@@ -195,7 +195,7 @@ app.get('/api/walkers/summary', async (req, res) => {
         // ....number of completed walks is the number of rows in walks with matching walker id,
         // ........and status = 'completed'
         // think i have to make the average. would do this by the avg function from ratings tabel
-        // .... avg(rating) from wra where walker
+        // .... avg(rating) from wra where walker_id = the same walker
         // counting number of rows is by count function. need rating_id as a placeholder
         // .... count(rating_id) from wra
         const query = `
