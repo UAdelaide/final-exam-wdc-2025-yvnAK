@@ -210,7 +210,7 @@ app.get('/api/walkers/summary', async (req, res) => {
                 wr.request_id
             from Users u
             where u.role = 'walker'
-            inner join Users u on wra.walker_id = u.user_id
+            inner join WalkRatings wra on wra.walker_id = u.user_id
 
             inner join WalkRequests wr on
         `;
