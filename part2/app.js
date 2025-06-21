@@ -185,7 +185,9 @@ app.post('/login', async (req, res) => {
 
         const passwordVeri = await bcrypt.compare(password, user.password_hash);
 
-        if 
+        if (!passwordVeri) {
+            return res.render('login', { error: 'Invalid username or password' });
+        }
 
         req.session.user = { id: user.user_id, username: user.username, role: user.role };
 
