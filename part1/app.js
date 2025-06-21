@@ -167,7 +167,8 @@ app.get('/api/walkrequests/open', async (req, res) => {
         // ....username is from where owner id is matches
         const query = `
             select
-                w.
+                wr.request_id
+                d.
         `;
         const [reqRows] = await db.execute(query);
         res.json(reqRows);
