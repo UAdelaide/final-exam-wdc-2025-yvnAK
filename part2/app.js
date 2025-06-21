@@ -37,8 +37,9 @@ app.post('/login', async (req, res) => {
             from Users
             where username = ?`,
             [username]
-        )
-    };
+        );
+        
+    }
 
     req.session.user = { id: user.user_id, username: user.username, role: user.role };
 
