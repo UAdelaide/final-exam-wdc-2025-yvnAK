@@ -194,11 +194,11 @@ app.get('/api/walkers/summary', async (req, res) => {
         // ....number of ratings is the number of rows in ratings with the matching walker id
         // ....number of completed walks is the number of rows in walks with matching walker id,
         // ........and status = 'completed'
-        // think i have to make the average myself. would do this by 
+        // think i have to make the average myself. would do this by
         const query = `
             select
                 u.username as walker_username
-                u.rating
+                .rating
             where u.role = 'walker'
         `;
         const [userRows] = await db.execute(query);
