@@ -33,7 +33,11 @@ app.post('login', async (req, res) => {
     if (user.role === 'walker') return res.redirect('/walker-dashboard');
 });
 
-function redirectIfAuth(req, res, nex)
+function redirectIfAuth(req, res, next) {
+    if(req.session.user) {
+        if
+    }
+}
 
 // Routes
 const walkRoutes = require('./routes/walkRoutes');
