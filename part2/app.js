@@ -157,6 +157,7 @@ function redirectIfAuth(req, res, next) {
     // otherwise keep going into the login page
     next();
 }
+// login time
 app.get('/', redirectIfAuth, (req, res) => {
     res.render('login', { error: null });
 });
