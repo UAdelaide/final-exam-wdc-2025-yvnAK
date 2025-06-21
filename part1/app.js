@@ -168,11 +168,11 @@ app.get('/api/walkrequests/open', async (req, res) => {
         const query = `
             select
                 wr.request_id,
-                d.name as dogName,
+                d.name as dog_name,
                 wr.requested_time,
                 wr.duration_minutes,
                 wr.location,
-                u.username as owName
+                u.username as owner_username
             from WalkRequests wr
             inner join Dogs d on wr.dog_id = d.dog_id
             inner join Users u on d.owner_id = u.user_id
