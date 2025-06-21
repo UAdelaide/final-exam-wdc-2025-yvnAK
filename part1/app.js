@@ -135,7 +135,8 @@ let db;
     }
 })();
 
-// 
+// ==================API Routes==================
+// ==================API Routes==================
 // app.get('/', async (req, res) => {
 //   try {
 //     const [] = await db.execute('SELECT * FROM ');
