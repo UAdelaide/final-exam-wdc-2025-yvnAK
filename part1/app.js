@@ -149,7 +149,7 @@ app.get('/', async (req, res) => {
 });
 // --------------------------------------------
 // ------------------api walkrequests open------------------
-app.get('/', async (req, res) => {
+app.get('/api/walkrequests/open', async (req, res) => {
     try {
         // get walk requests where status = 'open'
         // list request_id, dog name, requested time, duriation, location, and owner's username
@@ -164,7 +164,7 @@ app.get('/', async (req, res) => {
 });
 // ---------------------------------------------------------
 // ------------------api walkers summary------------------
-app.get('/api', async (req, res) => {
+app.get('/api/walkers/summary', async (req, res) => {
     try {
         // get users where role = 'walker'
         // list username, number of ratings, rating, completed walks
