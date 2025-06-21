@@ -176,7 +176,7 @@ app.get('/api/walkrequests/open', async (req, res) => {
             from WalkRequests wr
             inner join Dogs d on wr.dog_id = d.dog_id
             inner join Users u on d.owner_id = u.user_id
-            where wr.status = 
+            where wr.status = 'open'
         `;
         const [reqRows] = await db.execute(query);
         res.json(reqRows);
