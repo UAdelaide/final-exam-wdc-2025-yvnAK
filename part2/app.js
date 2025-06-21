@@ -28,6 +28,7 @@ app.post('/login', async (req, res) => {
     const { username, password } = req.body;
 
     try {
+        // find the user with the inputted information
         const [users] = await db.execute(`
             select
                 user_id,
