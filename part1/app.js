@@ -203,6 +203,7 @@ app.get('/api/walkers/summary', async (req, res) => {
         // select everything fron wra
         // then inner join with users for username
         // then inner join users with walk requests. not sure how to integrate this
+        // walk applications is the middleman. need leftjoin
         const query = `
             select
                 u.username as walker_username,
@@ -210,7 +211,7 @@ app.get('/api/walkers/summary', async (req, res) => {
                 wr.request_id
             from Users u
             where u.role = 'walker'
-            select request>id
+            select request_id
         `;
         const [userRows] = await db.execute(query);
         res.json(userRows);
