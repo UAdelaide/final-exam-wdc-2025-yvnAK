@@ -141,13 +141,14 @@ app.get('/api/dogs', async (req, res) => {
     try {
         // get all dog names + sizes and their owner username
         // owner username is from the Users table from the row which matches the owner id
+        // join via foreign key 'owner id'
         const query = `
             select
                 d.name as dogName,
                 d.size,
                 u.username as owName
             from Dogs d
-            
+
         `;
         const [dogRows] = await db.execute(query);
         res.json(dogRows);
