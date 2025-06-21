@@ -149,11 +149,12 @@
             const url = "https://dog.ceo/dog-api/documentation/random"
             try {
                 const response = await fetch(url);
-            }
-            if (!response.ok) {
-                throw new Error('Response not okay');
+                if (!response.ok) {
+                    throw new Error('Response not okay');
 
+                }
             }
+
             catch {
 
             }
