@@ -143,6 +143,7 @@ app.get('/api/dogs', async (req, res) => {
         // owner username is from the Users table from the row which matches the owner id
         const query = `
             select
+                d.name as dogName
         `;
         const [dogRows] = await db.execute(query);
         res.json(dogRows);
