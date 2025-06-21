@@ -183,7 +183,7 @@ app.post('/login', async (req, res) => {
 
         const user = users[0];
 
-        const passwordVeri = await 
+        const passwordVeri = await bcrypt.compare
 
         req.session.user = { id: user.user_id, username: user.username, role: user.role };
 
