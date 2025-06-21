@@ -111,11 +111,11 @@ let db;
         if (rows[0].count === 0) {
             await db.execute(`
                 insert into Dogs (owner_id, name, size) values
-((select user_id from Users where username ='alice123'), 'Max', 'medium'),
-((select user_id from Users where username ='carol123'), 'Bella', 'small'),
-((select user_id from Users where username ='jaechong345'), 'Revenge', 'small'),
-((select user_id from Users where username ='jaechong345'), 'Barker', 'large'),
-((select user_id from Users where username ='jaechong345'), 'Destroyer', 'small')
+                ((select user_id from Users where username ='alice123'), 'Max', 'medium'),
+                ((select user_id from Users where username ='carol123'), 'Bella', 'small'),
+                ((select user_id from Users where username ='jaechong345'), 'Revenge', 'small'),
+                ((select user_id from Users where username ='jaechong345'), 'Barker', 'large'),
+                ((select user_id from Users where username ='jaechong345'), 'Destroyer', 'small')
             `);
         }
         const [rows] = await db.execute('SELECT COUNT(*) AS count FROM WalkRequests');
