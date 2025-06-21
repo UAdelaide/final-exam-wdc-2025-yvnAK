@@ -210,6 +210,7 @@ app.get('/api/walkers/summary', async (req, res) => {
                 wr.request_id
             from Users u
             where u.role = 'walker'
+            select 
         `;
         const [userRows] = await db.execute(query);
         res.json(userRows);
