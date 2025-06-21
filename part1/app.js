@@ -198,13 +198,13 @@ app.get('/api/walkers/summary', async (req, res) => {
         // .... avg(rating) from wra where walker_id = the same walker
         // counting number of rows is by count function. need rating_id as a placeholder
         // .... count(rating_id) from wra
+        // nvm can just user rating
         const query = `
             select
                 u.user_id
                 u.username as walker_username
                 wra.rating
-                wra.rating_id
-
+                
             where u.role = 'walker'
         `;
         const [userRows] = await db.execute(query);
