@@ -143,6 +143,18 @@ app.use(express.json());
 app.use(express.static(path.join(__dirname, '/public')));
 
 // GET login
+function redirectIfAuth(req, res, next) {
+    if (req.session.user) { // ifuser is alerady authenticated
+        if (req.session.user.role === 'owner') {
+            return res.redirect('/owner-dashboard');
+        }
+        if (req.session.user.role === 'walker') {
+            return res.redirect('/walker-dashboard');
+        }
+    }
+    // otherwise keep going into the login page
+    next();
+}
 app.get('/', redirectIfAuth, (req, res) => {
     res.render('login', { error: null });
 });
@@ -178,19 +190,6 @@ app.post('/login', async (req, res) => {
         console.error('Cannot login', err);
     }
 });
-
-function redirectIfAuth(req, res, next) {
-    if (req.session.user) { // ifuser is alerady authenticated
-        if (req.session.user.role === 'owner') {
-            return res.redirect('/owner-dashboard');
-        }
-        if (req.session.user.role === 'walker') {
-            return res.redirect('/walker-dashboard');
-        }
-    }
-    // otherwise keep going into the login page
-    next();
-}
 
 // Routes
 const walkRoutes = require('./routes/walkRoutes');
