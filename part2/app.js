@@ -23,6 +23,8 @@ app.get('/', redirectIfAuth, (req, res) => {
     res.render('login', { error: null });
 });
 
+//
+
 // Routes
 const walkRoutes = require('./routes/walkRoutes');
 const userRoutes = require('./routes/userRoutes');
