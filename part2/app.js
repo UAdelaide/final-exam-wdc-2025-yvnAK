@@ -190,13 +190,15 @@ app.post('/login', async (req, res) => {
         // checking password with bcrypt
         const passwordVeri = await bcrypt.compare(password, user.password_hash);
 
+        // if password isnt verified then return an error
         if (!passwordVeri) {
             return res.render('login', { error: 'Invalid username or password' });
         }
 
-        // so by now they should be done
+        // so by now they should be done. define the user
         req.session.user = { id: user.user_id, username: user.username, role: user.role };
 
+        // redirect this new user
         if (user.role === 'owner') return res.redirect('/owner-dashboard');
         if (user.role === 'walker') return res.redirect('/walker-dashboard');
     } catch (err) {
