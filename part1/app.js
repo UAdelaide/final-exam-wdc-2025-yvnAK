@@ -145,7 +145,9 @@ app.get('/api/dogs', async (req, res) => {
             select
                 d.name as dogName,
                 d.size,
-                u.username as
+                u.username as owName
+            from Dogs d
+            
         `;
         const [dogRows] = await db.execute(query);
         res.json(dogRows);
