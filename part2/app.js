@@ -46,13 +46,13 @@ app.post('/login', async (req, res) => {
         }
 
         const user = users[0];
+        req.session.user = { id: user.user_id, username: user.username, role: user.role };
 
+        if (user.role === 'owner') return res.redirect('/owner-dashboard');
+        if (user.role === 'walker') return res.redirect('/walker-dashboard');
     }
 
-    req.session.user = { id: user.user_id, username: user.username, role: user.role };
 
-    if (user.role === 'owner') return res.redirect('/owner-dashboard');
-    if (user.role === 'walker') return res.redirect('/walker-dashboard');
 });
 
 function redirectIfAuth(req, res, next) {
