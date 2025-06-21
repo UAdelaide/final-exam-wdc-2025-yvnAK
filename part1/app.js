@@ -200,7 +200,9 @@ app.get('/api/walkers/summary', async (req, res) => {
         // .... count(rating_id) from wra
         // nvm can just user rating
         // request id to count number of walks where status is complete and walker is same
-        // select everything fron wra, then inner join with 
+        // select everything fron wra
+        // then inner join with users for username
+        // then inner join users with wa
         const query = `
             select
                 u.username as walker_username
