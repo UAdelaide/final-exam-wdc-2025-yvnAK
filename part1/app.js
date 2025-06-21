@@ -204,7 +204,7 @@ app.get('/api/walkers/summary', async (req, res) => {
                 u.user_id
                 u.username as walker_username
                 wra.rating
-                
+                wr.
             where u.role = 'walker'
         `;
         const [userRows] = await db.execute(query);
