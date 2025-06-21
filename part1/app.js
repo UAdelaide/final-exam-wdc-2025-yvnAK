@@ -169,9 +169,10 @@ app.get('/api/walkrequests/open', async (req, res) => {
             select
                 wr.request_id
                 d.name as dogName
-                wr.    requested_time DATETIME NOT NULL,
-
+                wr.requested_time
                 wr.duration_minutes
+                wr.location
+                u.u
         `;
         const [reqRows] = await db.execute(query);
         res.json(reqRows);
