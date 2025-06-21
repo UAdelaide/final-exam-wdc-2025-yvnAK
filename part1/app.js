@@ -200,6 +200,7 @@ app.get('/api/walkers/summary', async (req, res) => {
         // .... count(rating_id) from wra
         const query = `
             select
+                u.user_id
                 u.username as walker_username
                 wra.rating
                 wra.rating_id
