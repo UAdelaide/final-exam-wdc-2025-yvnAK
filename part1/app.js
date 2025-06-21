@@ -99,13 +99,12 @@ let db;
         const [rows] = await db.execute('SELECT COUNT(*) AS count FROM Users');
         if (rows[0].count === 0) {
             await db.execute(`
-                insert into Users (username, email, password_hash, role)
-values
-('alice123', 'alice@example.com', 'hashed123', 'owner'),
-('bobwalker', 'bob@example.com', 'hashed456', 'walker'),
-('carol123', 'carol@example.com', 'hashed789', 'owner'),
-('jaechong345', 'jchn@example.com', 'hashbr0wn', 'owner'),
-('kellsk295', 'klsk@example.com', 'hashbr1wn', 'walker')
+                insert into Users (username, email, password_hash, role) values
+                ('alice123', 'alice@example.com', 'hashed123', 'owner'),
+                ('bobwalker', 'bob@example.com', 'hashed456', 'walker'),
+                ('carol123', 'carol@example.com', 'hashed789', 'owner'),
+                ('jaechong345', 'jchn@example.com', 'hashbr0wn', 'owner'),
+                ('kellsk295', 'klsk@example.com', 'hashbr1wn', 'walker')
             `);
         }
         // ===============================================
