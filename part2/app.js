@@ -183,7 +183,9 @@ app.post('/login', async (req, res) => {
 
         const user = users[0];
 
-        const passwordVeri = await bcrypt.compare
+        const passwordVeri = await bcrypt.compare(password, user.password_hash);
+
+        if 
 
         req.session.user = { id: user.user_id, username: user.username, role: user.role };
 
