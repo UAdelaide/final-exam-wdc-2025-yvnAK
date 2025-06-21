@@ -150,8 +150,9 @@ app.get('/', async (req, res) => {
 // ------------------api walkrequests open------------------
 app.get('/', async (req, res) => {
     try {
-        const [] = await db.execute();
-        res.json();
+        
+        const [reqRows] = await db.execute();
+        res.json(reqRows);
     } catch (err) {
         res.status(500).json({ error: 'Failed to fetch ' });
     }
@@ -160,7 +161,7 @@ app.get('/', async (req, res) => {
 // ------------------api walkers summary------------------
 app.get('/', async (req, res) => {
     try {
-        const [] = await db.execute('SELECT * FROM ');
+        const [] = await db.execute();
         res.json();
     } catch (err) {
         res.status(500).json({ error: 'Failed to fetch ' });
