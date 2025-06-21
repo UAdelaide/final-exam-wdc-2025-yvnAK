@@ -202,7 +202,7 @@ app.get('/api/walkers/summary', async (req, res) => {
         // request id to count number of walks where status is complete and walker is same
         // select everything fron wra
         // then inner join with users for username
-        // then inner join users with walk requests
+        // then inner join users with walk requests. not sure how to integrate this
         const query = `
             select
                 u.username as walker_username
@@ -211,7 +211,7 @@ app.get('/api/walkers/summary', async (req, res) => {
             from WalkRatings wra
             inner join Users u on wra.walker_id = u.user_id
             where u.role = 'walker'
-            inner join WalkRequests wr on 
+            inner join WalkRequests wr on
         `;
         const [userRows] = await db.execute(query);
         res.json(userRows);
