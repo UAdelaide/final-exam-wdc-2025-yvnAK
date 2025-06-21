@@ -164,7 +164,7 @@ app.get('/', async (req, res) => {
 });
 // ---------------------------------------------------------
 // ------------------api walkers summary------------------
-app.get('/', async (req, res) => {
+app.get('/api', async (req, res) => {
     try {
         // get users where role = 'walker'
         // list username, number of ratings, rating, completed walks
