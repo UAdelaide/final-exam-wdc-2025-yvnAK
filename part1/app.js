@@ -208,7 +208,8 @@ app.get('/api/walkers/summary', async (req, res) => {
             select
                 u.username as walker_username,
                 count(rating) as total_ratings,
-                avg(rating) as average_ratings
+                avg(rating) as average_ratings,
+                count()
             from Users u
             left join WalkApplications wa on u.user_id = wa.walker_id
             left join WalkRatings wr on wa.walker_id = wr.walker_id
