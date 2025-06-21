@@ -45,7 +45,8 @@ app.post('/login', async (req, res) => {
             return res.render('login', { error: 'Invalid username or password' });
         }
 
-        
+        const user = users[0];
+
     }
 
     req.session.user = { id: user.user_id, username: user.username, role: user.role };
