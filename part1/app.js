@@ -119,7 +119,7 @@ let db;
             `);
         }
         const [reqRows] = await db.execute('SELECT COUNT(*) AS count FROM WalkRequests');
-        if (rows[0].count === 0) {
+        if (reqRows[0].count === 0) {
             await db.execute(`
                 insert into WalkRequests (dog_id, requested_time, duration_minutes, location, status) values
                 ((select dog_id from Dogs where name ='Max'), '2025-06-10 08:00:00', 30, 'Parklands', 'open'),
