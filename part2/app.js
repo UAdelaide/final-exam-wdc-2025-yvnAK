@@ -184,9 +184,10 @@ app.post('/login', async (req, res) => {
             return res.render('login', { error: 'Invalid username or password' });
         }
 
+        // define the user
         const user = users[0];
 
-        // checking password
+        // checking password with bcrypt
         const passwordVeri = await bcrypt.compare(password, user.password_hash);
 
         if (!passwordVeri) {
