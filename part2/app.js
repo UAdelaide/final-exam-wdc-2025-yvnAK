@@ -24,7 +24,9 @@ app.get('/', redirectIfAuth, (req, res) => {
 });
 
 // POST
-app.post('login', async (req, res) =>)
+app.post('login', async (req, res) => {
+    const
+});
 
 // Routes
 const walkRoutes = require('./routes/walkRoutes');
