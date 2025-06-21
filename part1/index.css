@@ -18,12 +18,10 @@ aside {}
 
 main {}
 
-img{
+img {}
 
-}
-
-button{
-    
+button {
+    size: 8px;
 }
 
 article {}
