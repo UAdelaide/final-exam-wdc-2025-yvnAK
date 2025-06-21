@@ -136,7 +136,6 @@ let db;
 })();
 
 // ==================API Routes==================
-// ==================API Routes==================
 // app.get('/', async (req, res) => {
 //   try {
 //     const [] = await db.execute('SELECT * FROM ');
@@ -145,7 +144,7 @@ let db;
 //     res.status(500).json({ error: 'Failed to fetch ' });
 //   }
 // });
-
+// ==============================================
 app.use(express.static(path.join(__dirname, 'public')));
 
 module.exports = app;
