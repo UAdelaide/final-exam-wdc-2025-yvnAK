@@ -139,6 +139,7 @@ let db;
 // ------------------api dogs------------------
 app.get('/', async (req, res) => {
     try {
+        // get all dogs and their owner username
         const [dogRows] = await db.execute();
         res.json(dogRows);
     } catch (err) {
