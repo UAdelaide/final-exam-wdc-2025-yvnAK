@@ -162,7 +162,8 @@ app.get('/', async (req, res) => {
 // ------------------api walkers summary------------------
 app.get('/', async (req, res) => {
     try {
-        // get users where 
+        // get users where role = 'walker'
+        // list
         const [userRows] = await db.execute();
         res.json(userRows);
     } catch (err) {
