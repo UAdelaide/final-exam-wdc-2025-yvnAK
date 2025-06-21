@@ -204,7 +204,7 @@ app.get('/api/walkers/summary', async (req, res) => {
         // then inner join with users for username
         // then inner join users with walk requests. not sure how to integrate this
         // walk applications is the middleman. need leftjoin
-        // conditional counting done with CASE WHEN
+        // conditional counting done with CASE WHEN. basically if statement
         const query = `
             select
                 u.username as walker_username,
