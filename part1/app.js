@@ -162,8 +162,9 @@ app.get('/', async (req, res) => {
 // ------------------api walkers summary------------------
 app.get('/', async (req, res) => {
     try {
+        // get users where 
         const [userRows] = await db.execute();
-        res.json();
+        res.json(userRows);
     } catch (err) {
         res.status(500).json({ error: 'Failed to fetch ' });
     }
