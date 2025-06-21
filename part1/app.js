@@ -195,6 +195,8 @@ app.get('/api/walkers/summary', async (req, res) => {
         // ....number of completed walks is the number of rows in walks with matching walker id,
         // ........and status = 'completed'
         const query = `
+            select
+                
             where u.role = 'walker'
         `;
         const [userRows] = await db.execute(query);
