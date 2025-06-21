@@ -35,7 +35,9 @@ app.post('login', async (req, res) => {
 
 function redirectIfAuth(req, res, next) {
     if(req.session.user) {
-        if(req.session.user.role)
+        if(req.session.user.role === 'owner'){
+            return res.redirect('/owner')
+        }
     }
 }
 
