@@ -136,7 +136,7 @@ let db;
 })();
 
 // ==================API Routes==================
-// api dogs
+// ------------------api dogs------------------
 app.get('/', async (req, res) => {
     try {
         const [] = await db.execute('SELECT * FROM ');
