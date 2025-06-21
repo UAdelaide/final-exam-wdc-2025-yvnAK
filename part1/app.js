@@ -151,7 +151,7 @@ app.get('/', async (req, res) => {
 app.get('/', async (req, res) => {
     try {
         // get walk requests where status = 'open'
-        // list dog name, requested time, location, and owner's username
+        // list request_id, dog name, requested time, location, and owner's username
         const [reqRows] = await db.execute();
         res.json(reqRows);
     } catch (err) {
