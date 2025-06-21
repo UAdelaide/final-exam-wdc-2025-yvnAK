@@ -164,10 +164,10 @@ app.get('/', async (req, res) => {
     try {
         // get users where role = 'walker'
         // list username, number of ratings, rating, completed walks
-            // username and rating is local to Users
-            // number of ratings is the number of rows in ratings with the matching walker id
-            // number of completed walks is the number of rows in walks with matching walker id,
-                // and status='completed'
+        // username and rating is local to Users
+        // number of ratings is the number of rows in ratings with the matching walker id
+        // number of completed walks is the number of rows in walks with matching walker id,
+        // and status = 'completed'
         const [userRows] = await db.execute();
         res.json(userRows);
     } catch (err) {
