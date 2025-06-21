@@ -199,12 +199,14 @@ app.get('/api/walkers/summary', async (req, res) => {
         // counting number of rows is by count function. need rating_id as a placeholder
         // .... count(rating_id) from wra
         // nvm can just user rating
+        // request id to count number of walks where status is complete and walker is same
         const query = `
             select
                 u.user_id
                 u.username as walker_username
                 wra.rating
                 wr.request_id
+            
             where u.role = 'walker'
         `;
         const [userRows] = await db.execute(query);
