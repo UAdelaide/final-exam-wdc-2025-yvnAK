@@ -205,8 +205,8 @@ app.get('/api/walkers/summary', async (req, res) => {
         // then inner join users with walk requests. not sure how to integrate this
         const query = `
             select
-                u.username as walker_username
-                wra.rating
+                u.username as walker_username,
+                wra.rating,
                 wr.request_id
             from Users u
             where u.role = 'walker'
