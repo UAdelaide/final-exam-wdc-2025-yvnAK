@@ -40,7 +40,7 @@ app.post('/login', async (req, res) => {
         );
 
         if (users.length === 0) {
-            return res.render('login')
+            return res.render('login', {error: 'Invalid username or password'})
         }
     }
 
