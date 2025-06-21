@@ -135,6 +135,7 @@ let db;
     }
 })();
 
+// 
 // app.get('/', async (req, res) => {
 //   try {
 //     const [] = await db.execute('SELECT * FROM ');
