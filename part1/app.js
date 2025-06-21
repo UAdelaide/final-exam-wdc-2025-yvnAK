@@ -55,7 +55,7 @@ let db;
             )
         `);
         await db.execute(`
-            create table if not exists Dogs (
+            create table if not exists WalkRequests (
                 dog_id INT AUTO_INCREMENT PRIMARY KEY,
                 owner_id INT NOT NULL,
                 name VARCHAR(50) NOT NULL,
@@ -64,7 +64,7 @@ let db;
             )
         `);
         await db.execute(`
-            create table if not exists Dogs (
+            create table if not exists WalkApplications (
                 dog_id INT AUTO_INCREMENT PRIMARY KEY,
                 owner_id INT NOT NULL,
                 name VARCHAR(50) NOT NULL,
