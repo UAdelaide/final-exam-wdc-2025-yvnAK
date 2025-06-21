@@ -27,11 +27,11 @@ app.get('/', redirectIfAuth, (req, res) => {
 app.post('/login', async (req, res) => {
     const { username, password } = req.body;
 
-    try{
-        const[users] = await db.execute(
-            'select
-            user_id, username, password_hash, role'
-        )
+    try {
+        const [users] = await db.execute(`
+            select
+            user_id, username, password_hash, role
+        `)
     }
 
     req.session.user = { id: user.user_id, username: user.username, role: user.role };
