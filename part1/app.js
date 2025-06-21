@@ -150,7 +150,7 @@ app.get('/', async (req, res) => {
 // ------------------api walkrequests open------------------
 app.get('/', async (req, res) => {
     try {
-        
+        // get walk requests where status = 'open'
         const [reqRows] = await db.execute();
         res.json(reqRows);
     } catch (err) {
