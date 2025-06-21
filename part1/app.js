@@ -162,7 +162,7 @@ app.get('/api/walkrequests/open', async (req, res) => {
         const query = `
 
         `;
-        const [reqRows] = await db.execute();
+        const [reqRows] = await db.execute(query);
         res.json(reqRows);
     } catch (err) {
         res.status(500).json({ error: 'Failed to fetch ' });
@@ -178,7 +178,10 @@ app.get('/api/walkers/summary', async (req, res) => {
         // ....number of ratings is the number of rows in ratings with the matching walker id
         // ....number of completed walks is the number of rows in walks with matching walker id,
         // ........and status = 'completed'
-        const [userRows] = await db.execute();
+        const query = `
+
+        `;
+        const [userRows] = await db.execute(query);
         res.json(userRows);
     } catch (err) {
         res.status(500).json({ error: 'Failed to fetch ' });
