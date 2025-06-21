@@ -19,7 +19,9 @@ app.use(express.static(path.join(__dirname, '/public')));
 
 // GET login
 app.get('/', (req, res) => { res.render('login', { error: null }); });
-app.get('/', redirectIfAuth)
+app.get('/', redirectIfAuth, (req, res) => {
+    res.render
+}
 
 // Routes
 const walkRoutes = require('./routes/walkRoutes');
