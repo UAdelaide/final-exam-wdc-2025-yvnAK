@@ -36,7 +36,7 @@ let db;
 
         // Create a table if it doesn't exist
         await db.execute(`
-
+            
       )
     `);
     } catch (err) {
