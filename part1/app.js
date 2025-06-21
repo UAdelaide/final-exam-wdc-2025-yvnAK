@@ -154,7 +154,8 @@ app.get('/', async (req, res) => {
         // get walk requests where status = 'open'
         // list request_id, dog name, requested time, duriation, location, and owner's username
         // ....request id, time, duration, and location are local
-        // ....
+        // ....dog name is from Dogs where the id matches
+        // ....username is from 
         const [reqRows] = await db.execute();
         res.json(reqRows);
     } catch (err) {
