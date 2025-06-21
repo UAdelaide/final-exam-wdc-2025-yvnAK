@@ -174,13 +174,11 @@ app.post('/login', async (req, res) => {
 
         if (user.role === 'owner') return res.redirect('/owner-dashboard');
         if (user.role === 'walker') return res.redirect('/walker-dashboard');
-    }
-    catch (error){
-        cons
-    }
+    } catch (err) {
+        console.error('Error setting up database. Ensure Mysql is running: service mysql start', err);
 
 
-});
+    });
 
 function redirectIfAuth(req, res, next) {
     if (req.session.user) { // ifuser is alerady authenticated
