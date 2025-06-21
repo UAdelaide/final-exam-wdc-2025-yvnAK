@@ -207,7 +207,7 @@ app.get('/api/walkers/summary', async (req, res) => {
         const query = `
             select
                 u.username as walker_username,
-                wra.rating,
+                count(rating),
                 wr.request_id
             from Users u
             left join WalkApplications wa on u.user_id = wa.walker_id
