@@ -173,7 +173,7 @@ app.get('/api/walkrequests/open', async (req, res) => {
                 wr.duration_minutes
                 wr.location
                 u.username as owName
-            from 
+            from WalkRequests wr
         `;
         const [reqRows] = await db.execute(query);
         res.json(reqRows);
