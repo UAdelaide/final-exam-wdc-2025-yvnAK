@@ -34,7 +34,7 @@ let db;
             database: 'DogWalkService'
         });
 
-        // 
+        // ==================Create Tables==================
         await db.execute(`
             create table if not exists Dogs (
                 dog_id INT AUTO_INCREMENT PRIMARY KEY,
