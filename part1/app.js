@@ -121,12 +121,12 @@ let db;
         const [rows] = await db.execute('SELECT COUNT(*) AS count FROM WalkRequests');
         if (rows[0].count === 0) {
             await db.execute(`
-                insert into Users (username, email, password_hash, role) values
-                ('alice123', 'alice@example.com', 'hashed123', 'owner'),
-                ('bobwalker', 'bob@example.com', 'hashed456', 'walker'),
-                ('carol123', 'carol@example.com', 'hashed789', 'owner'),
-                ('jaechong345', 'jchn@example.com', 'hashbr0wn', 'owner'),
-                ('kellsk295', 'klsk@example.com', 'hashbr1wn', 'walker')
+                insert into WalkRequests (dog_id, requested_time, duration_minutes, location, status) values
+                ((select dog_id from Dogs where name ='Max'), '2025-06-10 08:00:00', 30, 'Parklands', 'open'),
+                ((select dog_id from Dogs where name ='Bella'), '2025-06-10 09:30:00', 45, 'Beachside Ave', 'accepted'),
+                ((select dog_id from Dogs where name ='Revenge'), '2025-06-10 00:00:00', 25, 'Orangutan Grove', 'completed'),
+                ((select dog_id from Dogs where name ='Max'), '2025-12-26 20:20:50', 45, 'Sesame Street', 'cancelled'),
+                ((select dog_id from Dogs where name ='Destroyer'), '2025-08-30 13:43:03', 60, 'Saks Fifth Avenue', 'open')
             `);
         }
         // ===============================================
