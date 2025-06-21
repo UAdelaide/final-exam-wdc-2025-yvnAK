@@ -140,7 +140,7 @@ let db;
 app.get('/', async (req, res) => {
     try {
         const [dogRows] = await db.execute();
-        res.json();
+        res.json(dogRows);
     } catch (err) {
         res.status(500).json({ error: 'Failed to fetch ' });
     }
