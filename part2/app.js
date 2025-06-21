@@ -27,6 +27,10 @@ app.get('/', redirectIfAuth, (req, res) => {
 app.post('/login', async (req, res) => {
     const { username, password } = req.body;
 
+    try{
+        const[users]
+    }
+
     req.session.user = { id: user.user_id, username: user.username, role: user.role };
 
     if (user.role === 'owner') return res.redirect('/owner-dashboard');
