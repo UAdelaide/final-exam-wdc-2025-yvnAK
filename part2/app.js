@@ -35,7 +35,7 @@ app.post('login', async (req, res) => {
 
 function redirectIfAuth(req, res, next) {
     if(req.session.user) {
-        if
+        if(req.session.user.role)
     }
 }
 
